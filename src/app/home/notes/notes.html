@@ -6,6 +6,7 @@
         <div class="row between-xs">
             <note-card
                     class="col-xs-4"
+                    *ngFor="let note of notes"
                     [note]="note"
             >
             </note-card>

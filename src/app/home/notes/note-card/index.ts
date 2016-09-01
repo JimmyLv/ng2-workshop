@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, Input } from '@angular/core'
 
 @Component({
   selector: 'note-card',
@@ -6,8 +6,5 @@ import { Component } from '@angular/core'
   styles: [require('./note-card.css')],
 })
 export class NoteCard {
-  note = {
-    title: 'title',
-    value: 'value',
-  }
+  @Input() note
 }

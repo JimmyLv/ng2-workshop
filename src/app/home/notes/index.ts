@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { NoteCard } from "./note-card/index";
+import { NoteCard } from './note-card/index'
 
 @Component({
   selector: 'notes',
@@ -8,5 +8,14 @@ import { NoteCard } from "./note-card/index";
   directives: [NoteCard],
 })
 export class Notes {
-
+  notes = [
+    {
+      title: 't',
+      value: 'v',
+    },
+    {
+      title: 't1',
+      value: 'v1',
+    },
+  ]
 }
