@@ -6,8 +6,9 @@
         <div class="row between-xs">
             <note-card
                     class="col-xs-4"
-                    *ngFor="let note of notes"
+                    *ngFor="let note of notes; let i = index"
                     [note]="note"
+                    (checked)="checkCard($event, i)"
             >
             </note-card>
         </div>
