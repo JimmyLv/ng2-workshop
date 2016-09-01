@@ -1,5 +1,5 @@
-import {Component} from '@angular/core'
-import {NoteCard} from "../note-card/index";
+import { Component } from '@angular/core'
+import { NoteCard } from "./note-card/index";
 
 @Component({
   selector: 'notes',
