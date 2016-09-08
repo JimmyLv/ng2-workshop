@@ -1,11 +1,12 @@
 import { Component } from '@angular/core'
 import { NoteCard } from './note-card/index'
+import { NoteCreator } from './note-creator/index'
 
 @Component({
   selector: 'notes',
   template: require('./notes.html'),
   styles: [require('./notes.css')],
-  directives: [NoteCard],
+  directives: [NoteCard, NoteCreator],
 })
 export class Notes {
   notes = [
@@ -20,7 +21,7 @@ export class Notes {
   ]
 
   checkCard(note, i) {
-    console.info(note)
+    console.log(note)
     this.notes.splice(i)
   }
 }
