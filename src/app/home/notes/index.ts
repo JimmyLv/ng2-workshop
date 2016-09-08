@@ -9,6 +9,8 @@ import { NoteCreator } from './note-creator/index'
   directives: [NoteCard, NoteCreator],
 })
 export class Notes {
+  selectedColor = 'white'
+
   notes = [
     {
       title: 't',

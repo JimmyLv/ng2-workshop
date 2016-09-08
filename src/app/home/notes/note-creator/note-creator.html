@@ -1,4 +1,6 @@
-<div class="note-creator shadow-2">
+<div class="note-creator shadow-2"
+     [ngStyle]="{background: selectedColor}"
+>
     <form class="row">
         <input type="text"
                name="newNoteTitle"
@@ -6,6 +8,7 @@
                class="col-xs-10 title"
                autocomplete="off"
                [(ngModel)]="newNote.title"
+               *ngIf="isFocus"
         />
         <input type="text"
                name="newNoteValue"
@@ -13,8 +16,12 @@
                class="col-xs-10"
                autocomplete="off"
                [(ngModel)]="newNote.value"
+               (focus)="isFocus = true"
         />
-        <div class="actions col-xs-12 row between-xs">
+        <div class="actions col-xs-12 row between-xs"
+             *ngIf="isFocus"
+        >
+            <color-picker (onPickColor)="pickColor($event)"></color-picker>
             <button type="submit"
                     class="btn-light"
                     (click)="createNote()"
