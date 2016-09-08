@@ -10,7 +10,7 @@ export class NoteCard {
   @Output() checked = new EventEmitter()
 
   onChecked() {
-    console.info('checked!')
+    console.log('checked!')
     this.checked.emit(this.note)
   }
 }
