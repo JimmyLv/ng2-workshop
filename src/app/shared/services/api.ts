@@ -4,7 +4,7 @@ import { Observable } from 'rxjs'
 
 @Injectable()
 export class ApiService {
-  api_url: string = 'http://localhost:3500/'
+  api_url: string = 'http://localhost:3500'
   headers: Headers = new Headers({
     'Content-Type': 'application/json',
     'Accept': 'application/json'
@@ -18,7 +18,7 @@ export class ApiService {
   }
 
   private checkError(res: Response): Response {
-    if (res.status >= 200 && res < 400) {
+    if (res.status >= 200 && res.status < 400) {
       return res
     } else {
       throw new Error(res.statusText)
