@@ -18,9 +18,12 @@ export class Notes {
       .subscribe(res => this.notes = res.data)
   }
 
-  checkCard(note, i) {
-    console.log(note)
-    this.notes.splice(i)
+  checkCard(note) {
+    this.noteService.completeNote(note)
+      .subscribe(note => {
+        let index = this.notes.findIndex(localNote => localNote.id === note.id)
+        this.notes.splice(index, 1)
+      })
   }
 
   addNote(note) {

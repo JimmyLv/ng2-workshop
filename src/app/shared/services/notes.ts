@@ -15,4 +15,8 @@ export class NoteService {
   getNotes() {
     return this.apiService.get(this.path)
   }
+
+  completeNote(note) {
+    return this.apiService.delete(`${this.path}/${note.id}`)
+  }
 }
