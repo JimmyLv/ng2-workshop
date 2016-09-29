@@ -48,5 +48,9 @@ export class ApiService {
       .catch(err => Observable.throw(err))
       .map(this.getJson)
   }
-} 
 
+  setHeaders(headers: { [key: string]: string }): void {
+    Object.entries(headers)
+      .forEach(([key, value]) => this.headers.set(key, value))
+  }
+}
