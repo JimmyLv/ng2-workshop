@@ -1,5 +1,5 @@
 <div class="auth row center-xs middle-xs">
-    <form class="col-xs-6 shadow-2">
+    <form class="col-xs-6 shadow-2" (submit)="authenticate()">
         <div class="inputs row center-xs middle-xs">
             <h3 class="col-xs-8 title">
                 {{ mode }}
@@ -9,15 +9,19 @@
                    type="email"
                    name="email"
                    placeholder="email"
+                   required
+                   #email="ngModel"
             >
-            <div class="error">email is invalid</div>
+            <div class="error" [hidden]="email.valid || email.pristine">email is invalid</div>
             <input [(ngModel)]="user.password"
                    class="col-xs-8"
                    type="password"
                    name="password"
                    placeholder="password"
+                   required
+                   #password="ngModel"
             >
-            <div class="error">password is required</div>
+            <div class="error" [hidden]="password.valid || password.pristine">password is required</div>
             <div class="actions col-xs-12">
                 <div class="row center-xs">
                     <button type="submit" class="btn-light">{{ mode }}</button>
