@@ -38,6 +38,7 @@ describe('NoteCard', () => {
   })
 
   it("should change when onClick", () => {
+    fixture.detectChanges()
     const ele = fixture.debugElement.query(By.css('.icon'))
 
     ele.triggerEventHandler('click', null)
