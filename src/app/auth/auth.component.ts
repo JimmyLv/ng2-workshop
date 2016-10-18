@@ -16,8 +16,7 @@ export class AuthComponent implements OnInit {
   mode: 'signIn' | 'signUp'
   linkText: string
 
-  constructor(private authService: AuthService
-  ,  private router: Router) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
